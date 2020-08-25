@@ -1,0 +1,34 @@
+{{define "edit"}}
+  {{template "header" .}}
+        <div class="row">
+          <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{User.Id}}</th>
+              <td colspan="2">{{User.Username}}</td>
+              <td>
+                <form method="POST" action="change">
+                   <select class="custom-select" id="inputGroupSelect01">
+                    {{range $key, $value := .Role}}
+                      <option value="{{ $key }}">{{ $value }}</option>
+                    {{end}}
+                  </select>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+{{template "footer" .}}
+{{end}}

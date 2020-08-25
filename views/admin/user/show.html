@@ -1,0 +1,35 @@
+{{define "show"}}
+  {{template "header" .}}
+        <div class="row">
+          <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">Password</th>
+              <th scope="col">Role</th>
+              <th scope="col">Status</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{.Id}}</th>
+              <td colspan="2">{{.Username}}</td>
+              <td colspan="2">{{.Password}}</td>
+              <td colspan="2">{{.RoleId}}</td>
+              <td colspan="2">{{.Status}}</td>
+              <td>
+                <a href="/keikibook/admin/user/view?id={{.Id}}">view</a>
+                <a href="/keikibook/admin/user/edit?id={{.Id}}">edit</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+{{template "footer" .}}
+{{end}}

@@ -1,0 +1,26 @@
+{{define "changle"}}
+  {{template "header" .}}
+        <div class="row">
+          <form method="POST" action="changle">
+            <select class="custom-select" id="inputGroupSelect01">
+              {{range $key, $value := .Author}}
+                <option value="{{ $key }}">{{ $value }}</option>
+              {{end}}
+            </select>
+
+            <select class="custom-select" id="inputGroupSelect02">
+              {{range $keys, $values := .Book}}
+                <option value="{{ $keys }}">{{ $values }}</option>
+              {{end}}
+            </select>
+
+            <button type="submit" class="btn btn-primary">save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+{{template "footer" .}}
+
+{{end}}

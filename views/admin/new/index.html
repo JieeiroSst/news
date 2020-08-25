@@ -1,0 +1,37 @@
+{{define "index"}}
+  {{template "header" .}}
+        <div class="row">
+        <a href="/keikibook/admin/new/new" class="list-group-item">new</a>
+          <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Checks</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{range .}}
+            <tr>
+              <th scope="row">{{.Id}}</th>
+              <td colspan="2">{{.Name}}</td>
+              <td colspan="2">{{.Description}}</td>
+              <td colspan="2">{{.Checks}}</td>
+              <td>
+                <a href="/keikibook/admin/new/view?id={{.Id}}">view</a>
+                <a href="/keikibook/admin/new/edit?id={{.Id}}">edit</a>
+                <a href="/keikibook/admin/new/delete?id={{.Id}}">delete</a>
+              </td>
+            </tr>
+            {{end}}
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+{{template "footer" .}}
+{{end}}

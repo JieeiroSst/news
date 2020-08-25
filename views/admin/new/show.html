@@ -1,0 +1,33 @@
+{{define "show"}}
+  {{template "header" .}}
+        <div class="row">
+          <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Checks</th>
+              <th scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{.Id}}</th>
+              <td colspan="2">{{.Name}}</td>
+              <td colspan="2">{{.Description}}</td>
+              <td colspan="2">{{.Checks}}</td>
+              <td>
+                <a href="/keikibook/admin/new/edit?id={{.Id}}">edit</a>
+                <a href="/keikibook/admin/new/delete?id={{.Id}}">delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+{{template "footer" .}}
+{{end}}

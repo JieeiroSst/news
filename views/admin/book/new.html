@@ -1,0 +1,26 @@
+{{define "new"}}
+  {{template "header" .}}
+        <div class="row">
+          <form method="POST" action="insert">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" name="name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlFile1">File</label>
+              <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Description</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter description" name="description">
+            </div>
+            <button type="submit" class="btn btn-primary">save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+{{template "footer" .}}
+
+{{end}}
