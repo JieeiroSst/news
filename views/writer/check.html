@@ -1,4 +1,4 @@
-{{define "index"}}
+{{define "check"}}
   {{template "header" .}}
         <div class="row">
           <table class="table table-borderless">
@@ -8,7 +8,6 @@
               <th scope="col">Name</th>
               <th scope="col">Description</th>
               <th scope="col">Checks</th>
-              <th scope="col">Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -18,11 +17,6 @@
               <td colspan="2">{{.Name}}</td>
               <td colspan="2">{{.Description}}</td>
               <td colspan="2">{{.Checks}}</td>
-              <td>
-                <a href="/keikibook/admin/new/view?id={{.Id}}">view</a>
-                <a href="/keikibook/admin/new/edit?id={{.Id}}">edit</a>
-                <a href="/keikibook/admin/new/delete?id={{.Id}}">delete</a>
-              </td>
             </tr>
             {{end}}
           </tbody>

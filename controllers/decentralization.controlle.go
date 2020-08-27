@@ -5,17 +5,22 @@ import (
 	"net/http"
 
 	db "github.com/JIeeiroSSt/web/config"
+	view "github.com/JIeeiroSSt/web/config"
 	model "github.com/JIeeiroSSt/web/models"
 	session "github.com/JIeeiroSSt/web/utils"
 	"golang.org/x/crypto/bcrypt"
 )
 
 func ShowLogin(w http.ResponseWriter, r *http.Request) {
-	tmpl.ExecuteTemplate(w, "login", nil)
+	if err := view.GvMain.Render(w, http.StatusOK, "login", nil); err != nil {
+		panic(err.Error())
+	}
 }
 
 func ShowSignUp(w http.ResponseWriter, r *http.Request) {
-	tmpl.ExecuteTemplate(w, "signup", nil)
+	if err := view.GvMain.Render(w, http.StatusOK, "signup", nil); err != nil {
+		panic(err.Error())
+	}
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
